@@ -40,14 +40,14 @@ extensions = [
     "myst_parser",
     "sphinx_copybutton",
     "sphinx_design",
-    #"sphinxcontrib.spelling",
+    # "sphinxcontrib.spelling",
     "sphinxcontrib.bibtex",
     "sphinx.ext.graphviz",
     "sphinx_proof",
 ]
 
-# BibTeX 
-bibtex_bibfiles = ['online.bib']
+# BibTeX
+bibtex_bibfiles = ["online.bib"]
 
 # spelling_lang='en_US'
 spelling_lang = "fr_FR"
@@ -96,7 +96,15 @@ html_theme_options = {
 
 
 ####### MyST configuration
-myst_enable_extensions = ["colon_fence", "dollarmath", "amsmath", "linkify", "deflist", "smartquotes", "tasklist"]
+myst_enable_extensions = [
+    "colon_fence",
+    "dollarmath",
+    "amsmath",
+    #"linkify",
+    "deflist",
+    "smartquotes",
+    "tasklist",
+]
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -126,9 +134,11 @@ latex_elements = {
         "<<seminary_title>>", infos.seminary_title
     ).replace(
         "<<customize_infos>>",
-        r"Modifiez les informations de cette page dans le fichier {\verb source/infos.py}"
-        if infos.first_name == "Prénom"
-        else "",
+        (
+            r"Modifiez les informations de cette page dans le fichier {\verb source/infos.py}"
+            if infos.first_name == "Prénom"
+            else ""
+        ),
     ),
 }
 
